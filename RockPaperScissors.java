@@ -1,19 +1,23 @@
 import java.util.Scanner;
 
-public class RockPaperScissors{
-    public final int MAX_ROUNDS = 10;
-    public final int MIN_ROUNDS = 1;
-    //there is a reason for the specific order bellow, makes logic cleaner
-    public final String[] moves = {"rock", "scissors", "paper"};
-    
+public class RockPaperScissors{    
     public static void main(String[] args){
+        final int MAX_ROUNDS = 10;
+        final int MIN_ROUNDS = 1;
+        //there is a reason for the specific order bellow, makes logic cleaner
+        final String[] MOVES = {"rock", "scissors", "paper"};
+
+
         int wins, loss, draw = 0; // for the player
         Scanner in = new Scanner(System.in);
-        
 
-        for(int i = 0; i <10; i++){
-            System.out.println(getNum(1,10));
+        System.out.println("how many rounds would you like to play \"Rock, Paper, Scissors\"?");
+        int rounds = in.nextInt();
+        if (rounds < MIN_ROUNDS || rounds > MAX_ROUNDS){ //i.e. outide of allowed range
+            in.close();
+            System.exit(0);
         }
+
     }
 
     /**
