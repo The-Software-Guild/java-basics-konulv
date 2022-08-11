@@ -20,9 +20,7 @@ public class DogGenetics{
         System.out.println("Well then, I have this highly reliable report on " + name +
                             "'s prestigious background right here.");
         
-        System.out.println(name + " is: ");
-
-        String[] breeds = {"", "", "", "", ""}; //have to premake array because default value is null
+        //figuring out percentages
         int[] percent = new int[5];
         int total = 100;
         int k = 0;
@@ -34,13 +32,20 @@ public class DogGenetics{
         }
         percent[4] = total;
 
+        //figuring out breeds
+        String[] breeds = {"", "", "", "", ""}; //have to premake array because default value is null
         for(int i = 0; i<5; i++){
-
             int breed = getNum(0, BREEDS.length-1);
             while(in(BREEDS[breed], breeds)){
                 breed = getNum(0, BREEDS.length-1);
             }
             breeds[i] = BREEDS[breed];
+            
+        }
+
+        //display
+        System.out.println(name + " is: ");
+        for (int i=0; i<5; i++){
             System.out.println(percent[i] + "% " + breeds[i]);
         }
         in.close();
