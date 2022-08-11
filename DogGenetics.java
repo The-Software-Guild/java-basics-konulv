@@ -22,14 +22,26 @@ public class DogGenetics{
         
         System.out.println(name + " is: ");
 
-        int i = 100;
-        while (i !=0){
-            int percent = getNum(1, i);
-            int breed = getNum(0, BREEDS.length-1);
+        String[] breeds = {"", "", "", "", ""}; //have to premake array because default value is null
+        int[] percent = new int[5];
+        int total = 100;
+        int k = 0;
+        while (k < 4){
+            int num = getNum(1, total/3);
+            total -= num;
+            percent[k] = num;
+            k++;
+        }
+        percent[4] = total;
 
-            // this has a chance of repeating breeds, albeit unlikely.
-            System.out.println(percent + "% " + BREEDS[breed]);
-            i -= percent;
+        for(int i = 0; i<5; i++){
+
+            int breed = getNum(0, BREEDS.length-1);
+            while(in(BREEDS[breed], breeds)){
+                breed = getNum(0, BREEDS.length-1);
+            }
+            breeds[i] = BREEDS[breed];
+            System.out.println(percent[i] + "% " + breeds[i]);
         }
         in.close();
 
@@ -46,6 +58,22 @@ public class DogGenetics{
     public static int getNum(int min, int max){
         int num = (int)(Math.random() * ((max) - min + 1) + min);
         return num;
+    }
+
+    /**
+     * Also yoinked from RPS exercise
+     * @param val - value that one is looking for
+     * @param arr - array of values to be checked
+     * 
+     * @return boolean of whatever value exists in the array
+     */
+    public static boolean in(Object val, Object[] arr){
+        for(int i = 0; i < arr.length; i++){
+            if(arr[i].equals(val)){
+                return true;
+            }
+        }
+        return false;
     }
 
 
