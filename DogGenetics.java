@@ -46,7 +46,7 @@ public class DogGenetics{
         //display
         System.out.println(name + " is: ");
         for (int i=0; i<5; i++){
-            System.out.println(percent[i] + "% " + breeds[i]);
+            System.out.println(percent[i] + "% " + usedBreeds[i]);
         }
         in.close();
 
