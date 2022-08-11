@@ -33,13 +33,13 @@ public class DogGenetics{
         percent[4] = total;
 
         //figuring out breeds
-        String[] breeds = {"", "", "", "", ""}; //have to premake array because default value is null
+        String[] usedBreeds = {"", "", "", "", ""}; //have to premake array because default value is null
         for(int i = 0; i<5; i++){
-            int breed = getNum(0, BREEDS.length-1);
-            while(in(BREEDS[breed], breeds)){
-                breed = getNum(0, BREEDS.length-1);
+            int breedNum = getNum(0, BREEDS.length-1);
+            while(in(BREEDS[breedNum], usedBreeds)){
+                breedNum = getNum(0, BREEDS.length-1);
             }
-            breeds[i] = BREEDS[breed];
+            usedBreeds[i] = BREEDS[breedNum];
             
         }
 
