@@ -52,7 +52,7 @@ public class RockPaperScissors{
 
         }while(keep_playing);
 
-        System.out.printf("you have:\nWon %d times\nLost %d times\nDrew %d times", wins, loss, draw);
+        System.out.printf("you have:\nWon %d times\nLost %d times\nDrew %d times\n", wins, loss, draw);
 
 
     }
