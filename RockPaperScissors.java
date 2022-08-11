@@ -9,6 +9,7 @@ public class RockPaperScissors{
     public static void main(String[] args){
         int wins, loss, draw = 0; // for the player
         Scanner in = new Scanner(System.in);
+        
 
         for(int i = 0; i <10; i++){
             System.out.println(getNum(1,10));
