@@ -6,8 +6,8 @@ public class RockPaperScissors{
         for(int i = 0; i <10; i++){
             System.out.println(getNum(1,10));
         }
-        //Math.random()
     }
+    
     /*
      * @return number in range [from:to]
      */
