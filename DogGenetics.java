@@ -23,12 +23,10 @@ public class DogGenetics{
         //figuring out percentages
         int[] percent = new int[5];
         int total = 100;
-        int k = 0;
-        while (k < 4){
+        for(int i = 0; i<4; i++){
             int num = getNum(1, total/3);
             total -= num;
-            percent[k] = num;
-            k++;
+            percent[i] = num;
         }
         percent[4] = total;
 
